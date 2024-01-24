@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +10,7 @@ import {FormsModule} from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  baseUrl:string='http://localhost:8080/app/user';
+  baseUrl:string='http://127.0.0.1:8000';
 
   brandList:{code: string, description: string} [] = [  
     {code:'SAMSUNG', description:'SAMSUNG'},
@@ -77,12 +74,14 @@ export class HomeComponent implements OnInit {
   ]
 
   mobileForm = new FormGroup({
-      brand: new FormControl('',[]),
-      color: new FormControl('',[]),
-      model: new FormControl('',[]),
-      memory: new FormControl('',[]),
-      storage: new FormControl('',[])
+      brand: new FormControl('',[Validators.required]),
+      color: new FormControl('',[Validators.required]),
+      model: new FormControl('',[Validators.required]),
+      memory: new FormControl('',[Validators.required]),
+      storage: new FormControl('',[Validators.required])
   });
+
+  selling_price:string='0.0'
 
   constructor(private http: HttpClient) { }
 
@@ -90,9 +89,11 @@ export class HomeComponent implements OnInit {
   }
   checkBtnOnHandle():void{
     if (!this.mobileForm.invalid) {
+
+      let url:string = `${this.baseUrl}/featureMobile`
       let options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
       this.http.post(
-        this.baseUrl,
+        url,
         JSON.stringify(
           {
             brand: this.mobileForm.value.brand,
@@ -104,18 +105,22 @@ export class HomeComponent implements OnInit {
           ),
           options).subscribe(
             (response:any) => {
-  
+              console.log(response.predicted_value);
+              
+              this.selling_price= response.predicted_value;
             },
             error => {
               console.error('Error submitting form data:', error);
             }
         );
   
-        console.log(this.mobileForm.value.brand,
+        console.log(
+          this.mobileForm.value.brand,
           this.mobileForm.value.color,
           this.mobileForm.value.model,
           this.mobileForm.value.memory,
-          this.mobileForm.value.storage,)
+          this.mobileForm.value.storage,
+          )
     }
     
   }
@@ -129,5 +134,6 @@ export class HomeComponent implements OnInit {
         storage : ''
       }
     )
+    this.selling_price='0.0'
   }
 }

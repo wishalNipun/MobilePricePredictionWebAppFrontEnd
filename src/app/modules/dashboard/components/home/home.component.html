@@ -11,6 +11,7 @@
                             name="brand"  
                             id="brand" 
                             formControlName="brand"
+                            
                         >
                             <mat-option *ngFor="let brand of brandList" [value]="brand.code">
                               {{brand.description}}
@@ -79,8 +80,8 @@
             <button mat-raised-button class="ghost-btn" (click)="resetBtnOnHandle()">Reset</button>
 
             <div class="output">
-                <h3 class="label-output">Selling Price : </h3>
-                <h3 class="label-price">0</h3>
+                <h3 class="label-output">Selling Price : LKR </h3>
+                <h3 class="label-price">{{selling_price}}</h3>
             </div>
         </div>  
         
