@@ -1,1 +1,56 @@
-<p>detail workssss!</p>
+<div class="main">
+  <div>
+    <h1>Mobile Price Prediction Details History</h1>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="brand">
+          <th mat-header-cell *matHeaderCellDef>brand</th>
+          <td mat-cell *matCellDef="let element">{{ element.brand }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="model">
+          <th mat-header-cell *matHeaderCellDef>model</th>
+          <td mat-cell *matCellDef="let element">{{ element.model }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="storage">
+          <th mat-header-cell *matHeaderCellDef>storage</th>
+          <td mat-cell *matCellDef="let element">{{ element.storage }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="color">
+          <th mat-header-cell *matHeaderCellDef>color</th>
+          <td mat-cell *matCellDef="let element">{{ element.color }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="memory">
+          <th mat-header-cell *matHeaderCellDef>memory</th>
+          <td mat-cell *matCellDef="let element">{{ element.memory }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="predicted_value">
+          <th mat-header-cell *matHeaderCellDef>predicted_value</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.predicted_value }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="save_date">
+          <th mat-header-cell *matHeaderCellDef>save_date</th>
+          <td mat-cell *matCellDef="let element">{{ element.save_date }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
