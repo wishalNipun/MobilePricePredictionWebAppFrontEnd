@@ -1,0 +1,43 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 45px;
+    border-radius: 1rem;
+  }
+  .input-group-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-group-col {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .mat-form-field {
+    width: 29rem;
+  }
+  
+  .output {
+    padding-left: 60px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .label-output,
+  .label-price {
+    font-weight: 600;
+  }
+ .container  {
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 30px;
+    background-color: rgba(17, 60, 83, 0.836);
+  }

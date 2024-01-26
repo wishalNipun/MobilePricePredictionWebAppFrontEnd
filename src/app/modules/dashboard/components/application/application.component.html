@@ -1,0 +1,81 @@
+<body class="container">
+  <div class="main">
+    <div>
+      <h1>Input Your Mobile Phone Information</h1>
+      <form [formGroup]="mobileForm">
+        <div class="input-group-row">
+          <div class="input-group-col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Brand</mat-label>
+              <mat-select name="brand" id="brand" formControlName="brand">
+                <mat-option *ngFor="let brand of brandList" [value]="brand.code">
+                  {{ brand.description }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Model</mat-label>
+              <mat-select name="model" id="model" formControlName="model">
+                <mat-option *ngFor="let model of modelList" [value]="model.code">
+                  {{ model.description }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="input-group-col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Color</mat-label>
+              <mat-select name="color" id="color" formControlName="color">
+                <mat-option *ngFor="let color of colorList" [value]="color.code">
+                  {{ color.description }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Memory</mat-label>
+              <mat-select name="memory" id="memory" formControlName="memory">
+                <mat-option
+                  *ngFor="let memory of memoryList"
+                  [value]="memory.code"
+                >
+                  {{ memory.description }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="input-group-col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Storage</mat-label>
+              <mat-select name="storage" id="storage" formControlName="storage">
+                <mat-option
+                  *ngFor="let storage of storageList"
+                  [value]="storage.code"
+                >
+                  {{ storage.description }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+      <div class="btn-group">
+        <button
+          mat-raised-button
+          (click)="checkBtnOnHandle()"
+          [disabled]="mobileForm.invalid"
+        >
+          Click To Predict
+        </button>
+
+        <button mat-raised-button class="ghost-btn" (click)="resetBtnOnHandle()">
+          Reset
+        </button>
+
+        <div class="output">
+          <h3 class="label-output">Selling Price : LKR</h3>
+          <h3 class="label-price">{{ selling_price }} /=</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

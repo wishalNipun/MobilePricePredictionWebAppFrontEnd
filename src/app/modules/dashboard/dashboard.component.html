@@ -3,12 +3,10 @@
 
   <div class="navBtn">
     <button type="button" mat-button (click)="navigate('home')">Home</button>
-    <button type="button" mat-button (click)="navigate('detail')">
-      Prediction Detail History
-    </button>
+    <button type="button" mat-button (click)="navigate('application')">Application</button>
+    <button type="button" mat-button (click)="navigate('detail')">Prediction Detail History</button>
   </div>
 </div>
 
-<body id="body">
-  <router-outlet></router-outlet>
-</body>
+<router-outlet></router-outlet>
+

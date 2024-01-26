@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ApplicationComponent } from './components/application/application.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     DashboardComponent,
     HomeComponent,
     DetailComponent,
+    ApplicationComponent,
   ],
   imports: [
     CommonModule,

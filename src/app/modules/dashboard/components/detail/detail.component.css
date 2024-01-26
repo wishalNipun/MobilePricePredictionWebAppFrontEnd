@@ -8,3 +8,9 @@
 table {
   width: 100%;
 }
+.container  {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 30px;
+  background-color: rgba(17, 60, 83, 0.836);
+}
