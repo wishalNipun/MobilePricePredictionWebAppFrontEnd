@@ -40,11 +40,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
           type: 'circle',
         },
         opacity: {
-          value: 0.7,
+          value: 0.9,
           random: true,
         },
         size: {
-          value: 3,
+          value: 7,
           random: true,
         },
         line_linked: {
