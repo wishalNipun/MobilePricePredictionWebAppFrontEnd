@@ -1,14 +1,13 @@
 #particles-js {
   position: absolute;
-  background-color: rgba(17, 60, 83, 0.836);
+  background-color: rgba(46, 147, 163, 0.836);
   width:100vw;
   height: 400px;
   z-index: -1;
 }
 .heroSection{
     padding: 5rem;
-    background: rgb(70,70,199);
-    background: radial-gradient(circle, rgba(70,70,199,1) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgb(165, 133, 255) 0%, rgb(255, 255, 255) 40%);
 }
 .heroSection>div>div>h1{
     font-size: 38px;
@@ -27,3 +26,7 @@
     padding-left: 135px;
     padding-top: 43px;
 }
+.btnSection>button:hover{ 
+   background-color: rgb(42, 10, 88);
+}
+

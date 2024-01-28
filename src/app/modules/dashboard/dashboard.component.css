@@ -22,3 +22,6 @@
 }
 
 
+.navBtn>button:hover {
+  color:rgb(33, 185, 177)
+}
