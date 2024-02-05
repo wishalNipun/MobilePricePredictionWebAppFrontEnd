@@ -40,8 +40,12 @@
   }
   .label-output,
   .label-price {
+    font-size: 1.5rem;
     font-weight: 600;
   }
+  .label-price {
+    color:red
+    }
  .containers  {
     padding-right: 100px;
     padding-left: 100px;
