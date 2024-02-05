@@ -33,7 +33,10 @@ export class DetailComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.fetchData();
   }
-
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   private fetchData() {
     const apiUrl = `${this.baseUrl}/allData`;
     this.http.get<ApiResponse>(apiUrl).subscribe(

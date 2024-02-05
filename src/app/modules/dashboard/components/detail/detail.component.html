@@ -2,7 +2,10 @@
   <div class="main">
     <div>
       <h1>Mobile Price Prediction Details History</h1>
-  
+      <mat-form-field class="search">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Input Your Search Data" #input>
+      </mat-form-field>
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
           <ng-container matColumnDef="brand">
@@ -47,7 +50,7 @@
         </table>
   
         <mat-paginator
-          [pageSizeOptions]="[5, 10, 20]"
+          [pageSizeOptions]="[5]"
           showFirstLastButtons
           aria-label="Select page of periodic elements"
         >
