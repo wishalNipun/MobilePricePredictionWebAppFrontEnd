@@ -10,7 +10,7 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit, AfterViewInit {
-  baseUrl: string = 'http://127.0.0.1:8000';
+  baseUrl: string = 'http://54.80.49.118:8000';
   displayedColumns: string[] = [
     'brand',
     'model',
