@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-  baseUrl: string = 'http://127.0.0.1:8000';
+  baseUrl: string = 'http://54.80.49.118:8000';
 
   brandList: { code: string; description: string }[] = [
     { code: 'SAMSUNG', description: 'SAMSUNG' },
